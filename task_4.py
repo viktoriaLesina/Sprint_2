@@ -21,7 +21,7 @@ class EmployeeSalary:
     def get_email(cls, name, hours, rest_days, email):
         if email is None:
             email = f"{name}@email.com"
-        return email
+        return cls(name, hours, rest_days, email)
     
     @classmethod
     def set_hourly_payment(cls, new_rate):
@@ -30,5 +30,4 @@ class EmployeeSalary:
 
     def salary(self):
         return self.hours * self.hourly_payment
-
 
